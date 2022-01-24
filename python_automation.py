@@ -23,7 +23,7 @@ def extract_news (url):
     response = requests.get(url)
     content = response.content
     soup = BeautifulSoup (content, 'html.parser')
-    for i, tag in enumerate (soup.find_all('div', attrs = {'class': 'cd__content'})):
+    for i, tag in enumerate (soup.find_all('div', attrs = {'class':'title' 'valign' :''})):
         cnt+= ((str(i+1)+'-' + tag.text + "\n" + '<br>' )if tag.text!= 'More' else '')
         #print (tag.pretty) # find_all ('span', attrs={'class' : sitestr'})
     return (cnt)
@@ -39,9 +39,9 @@ print('composing Email ...')
 # update your email details
 SERVER = 'smtp.gmail.com' # your smtp server
 PORT = 587 # your port number
-FROM = 'yawavikoudjonou@gmail.com'# your from email id
-TO = 'carolekoudjonou08@gmail.com' # your to email ids  # can be a list
-PASS = 'Blome00228@' # your email id's password
+FROM = '****'# your from email id
+TO = '***' # your to email ids  # can be a list
+PASS = '***' # your email id's password
 
 # fp  = open  (file_name, 'rb')
 
